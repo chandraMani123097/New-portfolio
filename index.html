@@ -9,331 +9,420 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header/Navigation -->
+    <div class="cursor"></div>
+    <div class="particles" id="particles-js"></div>
+
     <header>
-      <div class="container">
-        <nav>
-          <div class="logo">
-            <a href="#"><span>Chandra</span>mani</a>
-          </div>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-        </nav>
-      </div>
+      <nav>
+        <div class="logo">
+          <span class="logo-bracket">{</span>
+          <span>CS</span>
+          <span class="logo-bracket">}</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="container">
+    <main>
+      <section id="home" class="hero">
         <div class="hero-content">
-          <h1 class="animated-text">Hi, I'm <span>Chandramani Singh</span></h1>
-          <h2 class="typing-text"></h2>
-          <p>
-            Passionate web developer with expertise in frontend technologies and
-            problem-solving skills.
+          <h1 class="animated-text">
+            Hello, I'm <span>Chandramani Singh</span>
+          </h1>
+          <h2 class="animated-subtext">Web Developer & Problem Solver</h2>
+          <p class="animated-para">
+            I build exceptional digital experiences with clean, efficient code
+            and modern technologies.
           </p>
           <div class="hero-btns">
-            <a href="#contact" class="btn">Hire Me</a>
-            <a href="#projects" class="btn secondary-btn">View Work</a>
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a
+              href="https://github.com/chandraMani123097"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="image-wrapper">
-            <div class="tech-icons">
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-css3-alt"></i>
-              <i class="fab fa-js"></i>
-              <i class="fab fa-react"></i>
-              <i class="fab fa-github"></i>
+        <div class="hero-illustration">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="window-title">portfolio.js</div>
+            </div>
+            <div class="window-content">
+              <pre><code class="language-javascript">const developer = {
+  name: "Chandramani Singh",
+  role: "Web Developer",
+  skills: ["React", "JavaScript", "Java", "DSA"],
+  location: "Noida, India",
+  contact: {
+    email: "chandramani.singh107@gmail.com",
+    phone: "+91 9311591618"
+  }
+};
+
+function buildProjects() {
+  return innovativeSolutions();
+}</code></pre>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About <span>Me</span></h2>
-        <div class="about-content">
-          <div class="about-text">
-            <h3>Web Developer & Problem Solver</h3>
-            <p>
-              I'm a BCA graduate with hands-on experience in web development and
-              GIS systems. I enjoy creating responsive, user-friendly interfaces
-              and solving complex problems.
-            </p>
-
-            <div class="skills">
-              <h4>Technical Skills:</h4>
-              <div class="skill-tags">
-                <span><i class="fab fa-html5"></i> HTML</span>
-                <span><i class="fab fa-css3-alt"></i> CSS</span>
-                <span><i class="fab fa-js"></i> JavaScript</span>
-                <span><i class="fab fa-react"></i> React</span>
-                <span><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                <span><i class="fas fa-database"></i> MySQL</span>
-                <span><i class="fab fa-github"></i> GitHub</span>
-                <span><i class="fab fa-java"></i> Java</span>
+      <section id="skills" class="skills-section">
+        <div class="section-header">
+          <h2>Technical Skills</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-java-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Java</h4>
+                  <p>DSA, OOP, Problem Solving</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-javascript-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>JavaScript</h4>
+                  <p>ES6+, DOM Manipulation, Async</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-c-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>C</h4>
+                  <p>Basic Programming</p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="achievements">
-              <h4>Achievements:</h4>
+          <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-react-original"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>React</h4>
+                  <p>Hooks, Context API, Components</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-html5-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>HTML5</h4>
+                  <p>Semantic Markup</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-css3-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>CSS3</h4>
+                  <p>Flexbox, Grid, Animations</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-bootstrap-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Bootstrap</h4>
+                  <p>Responsive Design</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-tailwindcss-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Tailwind</h4>
+                  <p>Utility-first CSS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-github-original"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>GitHub</h4>
+                  <p>Version Control</p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="devicon-mysql-plain"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>MySQL</h4>
+                  <p>Database Management</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-section">
+        <div class="section-header">
+          <h2>Professional Experience</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="experience-timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">May 2024 - Jul 2024</div>
+            <div class="timeline-content">
+              <h3>Frontend Developer Intern</h3>
+              <span class="company">Intern Certify</span>
               <ul>
                 <li>
-                  <i class="fas fa-trophy"></i> Won first prize in annual quiz
-                  competition
+                  Developed responsive web interfaces using HTML, CSS, and
+                  JavaScript
                 </li>
                 <li>
-                  <i class="fas fa-medal"></i> Scout and Guide program
-                  participant for 3 years
+                  Collaborated with senior developers to integrate interactive
+                  components
+                </li>
+                <li>
+                  Optimized application performance with UI/UX best practices
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-      <div class="container">
-        <h2 class="section-title">My <span>Education</span></h2>
-        <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-date">2025</div>
+            <div class="timeline-date">Sep 2023 - Mar 2024</div>
             <div class="timeline-content">
-              <h3>BCA</h3>
-              <p>Global Institute of Technology</p>
-              <span class="grade">CGPA: 7.81</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2021</div>
-            <div class="timeline-content">
-              <h3>Intermediate</h3>
-              <p>Rajkiya Inter College</p>
-              <span class="grade">Marks: 60.4%</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2019</div>
-            <div class="timeline-content">
-              <h3>High School</h3>
-              <p>Rajkiya Inter College</p>
-              <span class="grade">Marks: 61.83%</span>
+              <h3>Trainee – GIS Role</h3>
+              <span class="company">RMSI Pvt Ltd</span>
+              <ul>
+                <li>Worked on Geographical Information Systems (GIS)</li>
+                <li>Managed and analyzed spatial data</li>
+                <li>Developed analytical and problem-solving skills</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-      <div class="container">
-        <h2 class="section-title">Work <span>Experience</span></h2>
-        <div class="experience-grid">
-          <div class="experience-card">
-            <div class="exp-header">
-              <i class="fas fa-map-marked-alt"></i>
-              <h3>Trainee - GIS Role</h3>
-              <p class="company">RMSI Pvt Ltd</p>
-              <p class="duration">Sep 2023 - Mar 2024</p>
-            </div>
-            <ul>
-              <li>
-                Worked on Geographical Information Systems (GIS) to manage and
-                analyze spatial data
-              </li>
-              <li>
-                Developed analytical skills and problem-solving capabilities in
-                a data-driven environment
-              </li>
-            </ul>
-          </div>
-          <div class="experience-card">
-            <div class="exp-header">
-              <i class="fas fa-code"></i>
-              <h3>Frontend Developer Intern</h3>
-              <p class="company">Intern Certify</p>
-              <p class="duration">May 2024 - Jul 2024</p>
-            </div>
-            <ul>
-              <li>
-                Developed responsive web interfaces using HTML, CSS, and
-                JavaScript
-              </li>
-              <li>
-                Collaborated with senior developers to integrate interactive
-                components
-              </li>
-              <li>
-                Optimized application performance by implementing UI/UX best
-                practices
-              </li>
-            </ul>
-          </div>
+      <section id="projects" class="projects-section">
+        <div class="section-header">
+          <h2>Featured Projects</h2>
+          <div class="header-line"></div>
         </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">My <span>Projects</span></h2>
-        <div class="project-grid">
+        <div class="projects-container">
           <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                alt="Currency Converter"
-              />
-            </div>
-            <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
               <h3>Currency Converter</h3>
+            </div>
+            <div class="project-body">
               <p>
-                A responsive React app that converts currencies using real-time
-                exchange rates with clean, intuitive interface.
+                A responsive currency converter app in React that uses real-time
+                exchange rates with clean UI and error handling.
               </p>
               <div class="project-tech">
                 <span>React</span>
                 <span>API</span>
                 <span>CSS</span>
               </div>
+            </div>
+            <div class="project-footer">
               <a href="#" class="project-link"
                 >View Details <i class="fas fa-arrow-right"></i
               ></a>
             </div>
           </div>
+
           <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                alt="Calculator"
-              />
-            </div>
-            <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
               <h3>Calculator</h3>
+            </div>
+            <div class="project-body">
               <p>
-                A functional calculator with enhanced UI/UX built with React
-                featuring error handling for invalid operations.
+                A functional calculator with enhanced UI/UX built using React
+                with error handling for invalid operations.
               </p>
               <div class="project-tech">
                 <span>React</span>
                 <span>JavaScript</span>
+                <span>CSS</span>
               </div>
+            </div>
+            <div class="project-footer">
               <a href="#" class="project-link"
                 >View Details <i class="fas fa-arrow-right"></i
               ></a>
             </div>
           </div>
+
           <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1535551951406-a19828b0a76b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                alt="Chatbot"
-              />
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-key"></i>
+              </div>
+              <h3>Password Generator</h3>
             </div>
-            <div class="project-info">
-              <h3>Chatbot with Weather Report</h3>
+            <div class="project-body">
+              <p>
+                A secure password generator built with React that creates
+                strong, random passwords based on user preferences.
+              </p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>JavaScript</span>
+                <span>CSS</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-link"
+                >View Details <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Chatbot with Weather</h3>
+            </div>
+            <div class="project-body">
               <p>
                 A responsive chatbot that fetches real-time weather information
                 based on city names with interactive UI.
               </p>
               <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
                 <span>API</span>
-                <span>CSS</span>
               </div>
+            </div>
+            <div class="project-footer">
               <a href="#" class="project-link"
                 >View Details <i class="fas fa-arrow-right"></i
               ></a>
             </div>
           </div>
+
           <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1609743522653-52354461eb27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                alt="Tic-Tac-Toe"
-              />
-            </div>
-            <div class="project-info">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
               <h3>Tic-Tac-Toe Game</h3>
+            </div>
+            <div class="project-body">
               <p>
-                A classic game built with JavaScript featuring responsive design
-                and interactive gameplay.
+                A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript
+                with responsive design.
               </p>
               <div class="project-tech">
-                <span>JavaScript</span>
                 <span>HTML</span>
                 <span>CSS</span>
+                <span>JavaScript</span>
               </div>
+            </div>
+            <div class="project-footer">
               <a href="#" class="project-link"
                 >View Details <i class="fas fa-arrow-right"></i
               ></a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Get In <span>Touch</span></h2>
-        <div class="contact-content">
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <h2>Get In Touch</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="contact-container">
           <div class="contact-info">
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <h3>Location</h3>
-                <p>Sector 22, Noida – 201301</p>
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
               </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-phone-alt"></i>
-              <div>
-                <h3>Phone</h3>
-                <p>+91 9311591618</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <div>
+              <div class="info-content">
                 <h3>Email</h3>
                 <p>chandramani.singh107@gmail.com</p>
               </div>
             </div>
-            <div class="info-item">
-              <i class="fab fa-linkedin"></i>
-              <div>
-                <h3>LinkedIn</h3>
-                <p>linkedin.com/in/chandramani-singh</p>
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Phone</h3>
+                <p>+91 9311591618</p>
               </div>
             </div>
-            <div class="info-item">
-              <i class="fab fa-github"></i>
-              <div>
-                <h3>GitHub</h3>
-                <p>github.com/chandraMani123097</p>
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Location</h3>
+                <p>Sector 22, Noida – 201301</p>
               </div>
             </div>
           </div>
@@ -350,35 +439,47 @@
             <div class="form-group">
               <textarea placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="btn">
-              Send Message <i class="fas fa-paper-plane"></i>
+            <button type="submit" class="btn btn-primary">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
             </button>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <a href="#"><span>Chandra</span>mani</a>
-          </div>
-          <p>Web Developer | Problem Solver | Creative Thinker</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">{</span>
+          <span>CS</span>
+          <span class="logo-bracket">}</span>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Chandramani Singh. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/chandramani-singh" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://github.com/chandraMani123097" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="mailto:chandramani.singh107@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Chandramani Singh. All rights reserved.</p>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

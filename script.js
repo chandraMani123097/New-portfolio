@@ -1,140 +1,231 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Mobile Navigation Toggle
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const links = document.querySelectorAll(".nav-links li a");
+  // Custom cursor
+  const cursor = document.querySelector(".cursor");
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("active");
-  });
+  if (window.innerWidth > 768) {
+    cursor.style.display = "block";
 
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      hamburger.classList.remove("active");
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
     });
+
+    // Cursor hover effects
+    const hoverElements = document.querySelectorAll(
+      "a, button, .project-card, .skill-item, .info-card, .timeline-content"
+    );
+
+    hoverElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1.5)";
+        cursor.style.backgroundColor = "rgba(99, 102, 241, 0.5)";
+      });
+
+      el.addEventListener("mouseleave", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        cursor.style.backgroundColor = "var(--primary)";
+      });
+    });
+  }
+
+  // Initialize particles.js
+  if (typeof particlesJS !== "undefined") {
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: "#6366f1",
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000",
+          },
+        },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#6366f1",
+          opacity: 0.2,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "grab",
+          },
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 0.5,
+            },
+          },
+          push: {
+            particles_nb: 4,
+          },
+        },
+      },
+      retina_detect: true,
+    });
+  }
+
+  // Mobile menu toggle
+  const burger = document.querySelector(".burger");
+  const navLinks = document.querySelector(".nav-links");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    burger.classList.toggle("active");
   });
 
-  // Sticky Header on Scroll
-  window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    header.classList.toggle("scrolled", window.scrollY > 50);
-  });
-
-  // Smooth Scrolling for Anchor Links
+  // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
+      if (navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        burger.classList.remove("active");
+      }
+
       const targetId = this.getAttribute("href");
       const targetElement = document.querySelector(targetId);
 
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
-      }
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: "smooth",
+      });
     });
   });
 
-  // Typing Animation for Hero Section
-  const typingText = document.querySelector(".typing-text");
-  const words = [
-    "Web Developer",
-    "Frontend Engineer",
-    "React Developer",
-    "Problem Solver",
-  ];
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let isEnd = false;
+  // Scroll reveal animations
+  const sr = ScrollReveal({
+    origin: "bottom",
+    distance: "60px",
+    duration: 1000,
+    delay: 200,
+    reset: true,
+  });
 
-  function type() {
-    const currentWord = words[wordIndex];
-    const currentChar = currentWord.substring(0, charIndex);
-    typingText.textContent = currentChar;
+  sr.reveal(".section-header", { origin: "top" });
+  sr.reveal(".skill-category", { interval: 200 });
+  sr.reveal(".timeline-item", { interval: 200 });
+  sr.reveal(".project-card", { interval: 200 });
+  sr.reveal(".contact-info, .contact-form", { origin: "left", interval: 200 });
 
-    if (!isDeleting && charIndex < currentWord.length) {
-      // Typing
-      charIndex++;
-      setTimeout(type, 100);
-    } else if (isDeleting && charIndex > 0) {
-      // Deleting
-      charIndex--;
-      setTimeout(type, 50);
-    } else {
-      // Change word
-      isDeleting = !isDeleting;
-      if (!isDeleting) {
-        wordIndex = (wordIndex + 1) % words.length;
-      }
-      setTimeout(type, 1000);
-    }
-  }
-
-  // Start typing animation
-  setTimeout(type, 1000);
-
-  // Animate elements on scroll
-  function animateOnScroll() {
-    const elements = document.querySelectorAll(
-      ".timeline-item, .experience-card, .project-card"
-    );
-
-    elements.forEach((element) => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.3;
-
-      if (elementPosition < screenPosition) {
-        element.style.opacity = "1";
-        element.style.transform = "translateY(0)";
-      }
-    });
-  }
-
-  // Set initial state for animation
-  document
-    .querySelectorAll(".timeline-item, .experience-card, .project-card")
-    .forEach((element) => {
-      element.style.opacity = "0";
-      element.style.transform = "translateY(30px)";
-      element.style.transition = "all 0.5s ease";
-    });
-
-  window.addEventListener("scroll", animateOnScroll);
-  animateOnScroll(); // Run once on load
-
-  // Form Submission
+  // Form submission
   const contactForm = document.querySelector(".contact-form");
+
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Get form values
-      const name = this.querySelector('input[type="text"]').value;
-
-      // Show success message
-      alert(
-        `Thank you, ${name}! Your message has been received. I'll get back to you soon.`
-      );
-
-      // Reset the form
+      // Here you would typically send the form data to a server
+      // For demonstration, we'll just show an alert
+      alert("Thank you for your message! I will get back to you soon.");
       this.reset();
     });
   }
 
-  // Project Card Animation on Hover
-  const projectCards = document.querySelectorAll(".project-card");
-  projectCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      card.style.transform = "translateY(-10px)";
-    });
+  // Header scroll effect
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    if (window.scrollY > 100) {
+      header.style.padding = "1rem 5%";
+      header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.2)";
+    } else {
+      header.style.padding = "1.5rem 5%";
+      header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.2)";
+    }
+  });
 
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "translateY(0)";
-    });
+  // Intersection Observer for section active state
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav-links a");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          navItems.forEach((item) => {
+            item.classList.remove("active");
+            if (item.getAttribute("href") === `#${id}`) {
+              item.classList.add("active");
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 });
+
+// Initialize ScrollReveal if not already loaded
+if (typeof ScrollReveal === "undefined") {
+  const script = document.createElement("script");
+  script.src = "https://unpkg.com/scrollreveal";
+  document.head.appendChild(script);
+}
+
+// Initialize particles.js if not already loaded
+if (typeof particlesJS === "undefined") {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
+  document.head.appendChild(script);
+}
